@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Use D3 to select and change text.</title>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+  <h2>Use D3 to select and change text</h2>
+  <p id="p1">Hello World 1</p>
+  <p id="p2">Hello World 2</p>
+  <button id="b1">Click to change text 1.</button>
+  <button id="b2">Click to change all texts.</button>
+   
+<script>
+  $("#b1").click(function(){
+     d3.select("p#p1").text("The text 1 is changed by d3.js"); 
+  });
+  $("#b2").click(function(){
+     d3.selectAll("p").text("All texts are changed by d3.js"); 
+  });
+</script>
+</body>
+</html>
