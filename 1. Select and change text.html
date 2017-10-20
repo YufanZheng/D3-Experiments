@@ -12,14 +12,15 @@
   <h2>Use D3 to select and change text</h2>
   <p id="p1">Hello World 1</p>
   <p id="p2">Hello World 2</p>
-  <button id="b1">Click to change text 1.</button>
-  <button id="b2">Click to change all texts.</button>
+  <button id="b1">Click to change text 1</button>
+  <button id="b2">Click to change text 2</button>
+  <button id="b3">Click to change all texts</button>
    
 <script>
     
-  // ---------------------
+  // ------------------------------------------
   // Select item methods
-  // ---------------------
+  // ------------------------------------------
     
   var body  = d3.select("body");       //选择文档中的body元素
   var p1    = body.select("p");        //选择body中的第一个p元素
@@ -27,12 +28,20 @@
   var svg   = body.select("svg");      //选择body中的svg元素
   var rects = svg.selectAll("rect");   //选择svg中所有的svg元素
     
+  // ------------------------------------------
+  // Change text
+  // ------------------------------------------
+    
   $("#b1").click(function(){
-     d3.select("p#p1").text("The text 1 is changed by d3.js"); 
+     d3.select("p#p1").text("The text 1 is changed by text()"); 
   });
   $("#b2").click(function(){
+     d3.select("p#p2").text("The text 2 is changed by datum()"); 
+  });
+  $("#b3").click(function(){
      d3.selectAll("p").text("All texts are changed by d3.js"); 
   });
+
 </script>
 </body>
 </html>
