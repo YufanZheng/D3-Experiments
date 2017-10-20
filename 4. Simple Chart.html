@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>First Chart.</title>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+  <h2>Use D3 to draw our first chart</h2>
+   
+<script>
+    
+  // ------------------------------------------
+  // Create a SVG
+  // ------------------------------------------
+    
+  var svg = d3.select("body").append("svg")
+                .attr("width" , 300)
+                .attr("height", 300);
+    
+  // ------------------------------------------
+  // Draw somthing rectangle inside SVG
+  // ------------------------------------------  
+    
+  // A typical SVG structure is
+  // <svg>
+  //   <rect></rect>
+  //   <rect></rect>
+  // </svg>
+
+  // Define 5 rectangles to draw
+  var rectWidths = [ 250 , 210 , 170 , 130 , 90 ];  // widths
+  var rectHeight = 25;                              // height
+    
+  svg.selectAll("rect")
+    .data(rectWidths)                    // Bind data to SVG
+    .enter()                             // Choose the enter part of data
+    .append("rect")                      // For each part append the rectangle
+    .attr("x", 20)                       
+    .attr("y", function(data, index){
+        return index * rectHeight;   
+    })
+    .attr("width", function(data){
+        return data;  
+    })
+    .attr("height", rectHeight -2)
+    .attr("fill", "steelblue");
+
+</script>
+</body>
+</html>

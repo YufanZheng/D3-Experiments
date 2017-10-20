@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Add remove element.</title>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+  <h2>Use D3 to add and remove element</h2>
+  <p id="p1">Hello World 1</p>
+  <p id="p2">Hello World 2</p>
+  <button id="b1">Add Element bt insert</button>
+  <button id="b2">Add Element by append</button>
+  <button id="b3">Remove Element by remove</button>
+   
+<script>
+    
+  // ------------------------------------------
+  // Add element
+  // ------------------------------------------
+    
+  $("#b1").click(function(){
+     d3.select("body").insert("p").text("New text by insert");
+  });
+  $("#b2").click(function(){
+     d3.select("body").append("p").text("New text by append");
+  });
+    
+  // ------------------------------------------
+  // Remove element
+  // ------------------------------------------
+    
+  $("#b3").click(function(){
+     d3.select("p").remove();
+  });
+
+</script>
+</body>
+</html>
